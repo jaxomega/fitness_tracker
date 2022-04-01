@@ -59,6 +59,35 @@ export default class createWorkout extends Component {
 
     window.location = '/';
   };
+  function createWorkout() {
+    if ($("#workout").val() != null && $("#workout").val() != '') {
+        createWorkout();
+        formClear();
+        $("#workout").focus();
+    }
+}
+function createWorkout() {
+  // First check if a <tbody> tag exists, add one if not
+  if ($("#productTable tbody").length == 0) {
+      $("#productTable").append("<tbody></tbody>");
+  }
+
+  // Append product to the table
+  $("#productTable tbody").append("<tr>" +
+      "<td>" + $("#user").val() + "</td>" +
+      "<td>" + $("#workout").val() + "</td>" +
+      "<td>" + $("#duration").val() + "</td>" +
+      "<td>" + $("#date").val() + "</td>" +
+      "<td>" + $("#description").val() + "</td>" +
+      "</tr>");
+}
+function formClear() {
+      $("#user").val();
+      $("#workout").val();
+      $("#duration").val();
+      $("#date").val();
+      $("#description").val();
+}
 
   render() {
     return (
