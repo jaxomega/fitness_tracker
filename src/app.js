@@ -14,7 +14,7 @@ export default function App() {
       marginTop: "85px",
       padding: "20px",
       height: "60vh",
-      backgroundColor: "white",
+      backgroundColor: "violet",
       color: "white"
     }
   });

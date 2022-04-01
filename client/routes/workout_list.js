@@ -12,7 +12,6 @@ router.route('/add').post((req, res) => {
   const duration = Number(req.body.duration);
   const date = Date.parse(req.body.date);
   const description = req.body.description;
-
   const newWorkout = new Workout({ username, duration, date, description });
 
   newWorkout
