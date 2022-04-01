@@ -13,7 +13,9 @@ export default function App() {
     main: {
       marginTop: "85px",
       padding: "20px",
-      height: "60vh"
+      height: "60vh",
+      backgroundColor: "white",
+      color: "white"
     }
   });
 

@@ -59,40 +59,11 @@ export default class createWorkout extends Component {
 
     window.location = '/';
   };
-  function createWorkout() {
-    if ($("#workout").val() != null && $("#workout").val() != '') {
-        createWorkout();
-        formClear();
-        $("#workout").focus();
-    }
-}
-function createWorkout() {
-  // First check if a <tbody> tag exists, add one if not
-  if ($("#productTable tbody").length == 0) {
-      $("#productTable").append("<tbody></tbody>");
-  }
-
-  // Append product to the table
-  $("#productTable tbody").append("<tr>" +
-      "<td>" + $("#user").val() + "</td>" +
-      "<td>" + $("#workout").val() + "</td>" +
-      "<td>" + $("#duration").val() + "</td>" +
-      "<td>" + $("#date").val() + "</td>" +
-      "<td>" + $("#description").val() + "</td>" +
-      "</tr>");
-}
-function formClear() {
-      $("#user").val();
-      $("#workout").val();
-      $("#duration").val();
-      $("#date").val();
-      $("#description").val();
-}
 
   render() {
     return (
       <React.Fragment>
-        <Typography>*Enter Activity Details</Typography>
+        <Typography>*Add Workout</Typography>
         <Divider style={{ margin: "20px 0px" }} />
         <FormControl>
           <InputLabel>User</InputLabel>
@@ -141,7 +112,7 @@ function formClear() {
         <br />
         <Button
           variant="contained"
-          style={{ margin: "20px 0px", backgroundColor: '#6c7b95', color: 'white' }}
+          style={{ margin: "20px 0px", backgroundColor: 'purple', color: 'white' }}
           onClick={this.onSubmit}
         >
           Create
@@ -149,7 +120,7 @@ function formClear() {
         <br />
         <Button
           variant="contained"
-          style={{ margin: "20px 0px", backgroundColor: '#6c7b95', color: 'red' }}
+          style={{ margin: "20px 0px", backgroundColor: 'purple', color: 'white' }}
           onClick={this.onSubmit}
         >
           Delete

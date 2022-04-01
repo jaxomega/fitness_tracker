@@ -75,32 +75,11 @@ export default class editWorkout extends Component {
 
     window.location = '/';
   };
-  function editWorkout() {
-    if ($("#workout").val() != null && $("#workout").val() != '') {
-        editWorkout();
-        formClear();
-        $("#workout").focus();
-    }
-}
-function editWorkout() {
-  // First check if a <tbody> tag exists, add one if not
-  if ($("#productTable tbody").length == 0) {
-      $("#productTable").append("<tbody></tbody>");
-  }
 
-  // Append product to the table
-  $("#productTable tbody").append("<tr>" +
-      "<td>" + $("#user").val() + "</td>" +
-      "<td>" + $("#workout").val() + "</td>" +
-      "<td>" + $("#duration").val() + "</td>" +
-      "<td>" + $("#date").val() + "</td>" +
-      "<td>" + $("#description").val() + "</td>" +
-      "</tr>");
-}
   render() {
     return (
       <React.Fragment>
-        <Typography>*Edit Activity Details</Typography>
+        <Typography>*Add Workout</Typography>
         <Divider style={{ margin: "20px 0px" }} />
         <FormControl>
           <InputLabel>User</InputLabel>
@@ -152,7 +131,7 @@ function editWorkout() {
           color="primary"
           style={{
             margin: "20px 0px",
-            backgroundColor: "#6c7b95",
+            backgroundColor: "purple",
             color: "white"
           }}
           onClick={this.onSubmit}

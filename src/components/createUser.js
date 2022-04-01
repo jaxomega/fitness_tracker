@@ -47,7 +47,7 @@ export default class CreateUser extends Component {
           color="primary"
           style={{
             margin: "26px 0px",
-            backgroundColor: "#6c7b95",
+            backgroundColor: "purple",
             color: "white"
           }}
           onClick={this.onSubmit}
@@ -60,8 +60,8 @@ export default class CreateUser extends Component {
           color="primary"
           style={{
             margin: "26px 0px",
-            backgroundColor: "#6c7b95",
-            color: "red"
+            backgroundColor: "purple",
+            color: "white"
           }}
           onClick={this.onSubmit}
         >
