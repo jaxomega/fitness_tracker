@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/styles';
 export default function Navbar() {
   const useStyles = makeStyles({
     nav: {
-      backgroundColor: "purple"
+      backgroundColor: "red"
     },
     link: {
       color: "white",

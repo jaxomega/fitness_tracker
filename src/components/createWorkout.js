@@ -63,7 +63,7 @@ export default class createWorkout extends Component {
   render() {
     return (
       <React.Fragment>
-        <Typography>*Add Workout</Typography>
+        <Typography style={{ padding: "20px", backgroundColor: 'red', color: 'white' }}>*Add Workout</Typography>
         <Divider style={{ margin: "20px 0px" }} />
         <FormControl>
           <InputLabel>User</InputLabel>
@@ -112,7 +112,7 @@ export default class createWorkout extends Component {
         <br />
         <Button
           variant="contained"
-          style={{ margin: "20px 0px", backgroundColor: 'purple', color: 'white' }}
+          style={{ margin: "20px 0px", backgroundColor: 'red', color: 'white' }}
           onClick={this.onSubmit}
         >
           Create
@@ -120,7 +120,7 @@ export default class createWorkout extends Component {
         <br />
         <Button
           variant="contained"
-          style={{ margin: "20px 0px", backgroundColor: 'purple', color: 'white' }}
+          style={{ margin: "20px 0px", backgroundColor: 'red', color: 'white' }}
           onClick={this.onSubmit}
         >
           Delete
