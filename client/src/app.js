@@ -1,4 +1,4 @@
-import './styles/App.css'
+import './styles/style.css'
 import { Routes, Route } from 'react-router-dom'
 import routineList from './components/routineList'
 import routineDetails from './components/routineDetails'
