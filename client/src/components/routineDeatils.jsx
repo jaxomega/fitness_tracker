@@ -2,18 +2,16 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import CreateCommentForm from './CreateCommentForm'
-import { LoadPostDetails, UpdateCommentAuthor, UpdateCommentText } from '../store/actions/PostActions'
-// import { process_params } from 'express/lib/router'
+import CreateWorkout from './createWorkout'
 
-const mapStateToProps = ({ postDetailsState }) => {
-  return { postDetailsState }
+const mapStateToProps = ({ routineDetailsState }) => {
+  return { routineDetailsState }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPostDetails: (id) => dispatch(LoadPostDetails(id)),
-    updateCommentAuthor: (authorName) => dispatch(UpdateCommentAuthor(authorName)),
+    fetchRoutineDetails: (id) => dispatch(LoadPostDetails(id)),
+    updateCommentAuthor: (authorName) => dispatch(UpdateCommentAuthor(userName)),
     updateCommentText: (commentText) => dispatch(UpdateCommentText(commentText))
   }
 }
