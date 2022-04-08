@@ -2,31 +2,31 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const mapStateToProps = ({ postState }) => {
-  return { postState }
+const mapStateToProps = ({ routineState }) => {
+  return { routineState }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPosts: () => dispatch(LoadPosts())
+    fetchRoutines: () => dispatch(LoadWorkouts())
   }
 }
 
-const PostList = (props) => {
+const RoutineList = (props) => {
   
   useEffect (() => {
-    props.fetchPosts()
+    props.fetchRoutines()
   },[])
   
   return (
     <div>
-      {props.postState.posts.map((post) => (
-        <ul key={post.id}>
-          <Link to={`/posts/${post._id}`}>{post.title}</Link>
+      {props.routineState.posts.map((post) => (
+        <ul key={routine.id}>
+          <Link to={`/routine/${routine._id}`}>{routine.title}</Link>
         </ul>
       ))}
     </div>
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostList)
+export default connect(mapStateToProps, mapDispatchToProps)(RoutineList)
