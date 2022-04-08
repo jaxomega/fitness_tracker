@@ -1,8 +1,8 @@
 const router = require('express').Router();
-let workout = require('../log/workout');
+let Workout = require('../log/workout');
 
 router.route('/').get((req, res) => {
-  workout.find()
+  Workout.find()
     .then(workouts => res.json(workouts))
     .catch(err => res.status(400).json(`Error: ${err}`));
 });
