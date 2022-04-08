@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { LoadPosts } from '../store/actions/PostActions'
 
 const mapStateToProps = ({ postState }) => {
   return { postState }

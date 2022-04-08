@@ -19,4 +19,4 @@ const createWorkout = ({ newWorkout, handleInputChange, createWorkout }) => {
     )
   }
   
-  export default CreateCommentForm
+  export default createWorkout
