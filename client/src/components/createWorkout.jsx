@@ -4,11 +4,15 @@ const createWorkout = ({ newWorkout, handleInputChange, createWorkout }) => {
         <h2>Workout</h2>
         <form onSubmit={createWorkout}>
           <div className="form-field">
-            <label><b>User</b>:</label>
-            <input name="user" type="text" onChange={handleInputChange} placeholder="Enter user name..." value={newWorkout.user} required />
+            <label><b>Workout</b>:</label>
+            <input name="text" type="textarea" onChange={handleInputChange} placeholder="Description..." value={newWorkout.text} required />
           </div>
           <div className="form-field">
-            <label><b>Workout Description</b>:</label>
+            <label><b>Duration</b>:</label>
+            <input name="text" type="textarea" onChange={handleInputChange} placeholder="Description..." value={newWorkout.text} required />
+          </div>
+          <div className="form-field">
+            <label><b>Description</b>:</label>
             <input name="text" type="textarea" onChange={handleInputChange} placeholder="Description..." value={newWorkout.text} required />
           </div>
           <div className="button-wrapper">

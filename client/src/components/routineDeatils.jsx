@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import CreateWorkout from './createWorkout'
+import createWorkout from './createWorkout'
 
 const mapStateToProps = ({ routineDetailsState }) => {
   return { routineDetailsState }
@@ -47,15 +47,15 @@ const RoutineDetails = (props) => {
         console.log(error)
       })
     setNewWorkout({
-      author: '',
-      text: '',
-      post: id
+      user: '',
+      workout: workout.id,
+      description: ''
     })
   }
   console.log('props.routineDetailsState:', props.routineDetailsState)
   const routines = props.routineDetailsState.details
   console.log('ROUTINE:', routines)
-  const commentsArray = props.routineDetailsState.workouts
+  const workoutsArray = props.routineDetailsState.workouts
   console.log('WORKOUTS:', workoutsArray)
 
   const handleOnUserChange = (event) => {
@@ -87,10 +87,10 @@ const RoutineDetails = (props) => {
         <h3>{details.title}</h3>
         <p><em>{details.content}</em></p>
         <h3>Workouts:</h3>
-        {workoutsArray.map((comment) => (
+        {workoutsArray.map((workout) => (
           <div key={workout.id}>
-            <p><b>User</b>: {comment.user}</p>
-            <p><b>Description</b>: {comment.text}</p>
+            <p><b>User</b>: {workout.user}</p>
+            <p><b>Description</b>: {workout.text}</p>
           </div>
         ))}
       </div>
