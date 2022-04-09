@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "dependencies": {
     "axios": "^0.26.1",
     "cors": "^2.8.5",
