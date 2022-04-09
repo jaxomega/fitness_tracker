@@ -8,14 +8,6 @@ const mapStateToProps = ({ routineDetailsState }) => {
   return { routineDetailsState }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchRoutineDetails: (id) => dispatch(LoadRoutineDetails(id)),
-    updateWorkoutUser: (userName) => dispatch(UpdateWorkoutUser(userName)),
-    UpdateWorkoutDescription: (workoutDescription) => dispatch(UpdateWorkoutDescription(workoutDescription))
-  }
-}
-
 const RoutineDetails = (props) => {
   let { id } = useParams()
   const [routine, setRoutine] = useState({})
@@ -36,22 +28,23 @@ const RoutineDetails = (props) => {
     props.fetchRoutineDetails(id)
   }, [id])
 
-  const createWorkout = async (event) => {
-    event.preventDefault()
-    await axios
-      .routine('http://localhost:3001/workout', setWorkout)
-      .then(function (response) {
-        getWorkoutData()
-      })
-      .catch(function (error) {
-        console.log(error)
-      })
-    setNewWorkout({
-      user: '',
-      workout: workout.id,
-      description: ''
-    })
-  }
+  // const createWorkout = async (event) => {
+  //   event.preventDefault()
+  //   await axios
+  //     .routine('http://localhost:3001/workout', setWorkout)
+  //     .then(function (response) {
+  //       getWorkoutData()
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error)
+  //     })
+  //   setNewWorkout({
+  //     user: '',
+  //     workout: workout.id,
+  //     description: ''
+  //   })
+  // }
+  
   console.log('props.routineDetailsState:', props.routineDetailsState)
   const routines = props.routineDetailsState.details
   console.log('ROUTINE:', routines)
@@ -84,8 +77,8 @@ const RoutineDetails = (props) => {
         />
       </form>
       <div>
-        <h3>{details.title}</h3>
-        <p><em>{details.content}</em></p>
+        <h3>{routine.title}</h3>
+        <p><em>{routine.content}</em></p>
         <h3>Workouts:</h3>
         {workoutsArray.map((workout) => (
           <div key={workout.id}>
@@ -98,4 +91,4 @@ const RoutineDetails = (props) => {
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RoutineDetails)
+export default RoutineDetails

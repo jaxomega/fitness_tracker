@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-
-const mapStateToProps = ({ routineState }) => {
-  return { routineState }
-}
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchRoutines: () => dispatch(LoadWorkouts())
-  }
-}
+import Routine from '../models/routine'
 
 const RoutineList = (props) => {
   
@@ -21,12 +12,12 @@ const RoutineList = (props) => {
   return (
     <div>
       {props.routineState.posts.map((post) => (
-        <ul key={routine.id}>
-          <Link to={`/routine/${routine._id}`}>{routine.title}</Link>
+        <ul key={Routine.id}>
+          <Link to={`/routine/${Routine._id}`}>{Routine.title}</Link>
         </ul>
       ))}
     </div>
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(RoutineList)
+export default RoutineList

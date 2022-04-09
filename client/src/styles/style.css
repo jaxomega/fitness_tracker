@@ -1,9 +1,5 @@
 * {
-    background-image: url("https://www.specialevents.com/sites/specialevents.com/files/styles/article_featured_retina/public/World_Passports_2019_0.jpg?itok=OjJJ9GCQ");
-    background-repeat: no-repeat; 
-    background-position: center center;
-    background-size: contain;
-    background-attachment: scroll;
+    background-color: black;
    }
    
    div #root {
