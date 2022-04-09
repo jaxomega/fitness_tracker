@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import axios from 'axios'
+import workout from ''
 import createWorkout from './createWorkout'
 
 const mapStateToProps = ({ routineDetailsState }) => {
@@ -39,7 +40,7 @@ const RoutineDetails = (props) => {
   const createWorkout = async (event) => {
     event.preventDefault()
     await axios
-      .routine('http://localhost:3001/workout', newWorkout)
+      .routine('http://localhost:3001/workout', setWorkout)
       .then(function (response) {
         getWorkoutData()
       })
