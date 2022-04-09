@@ -1,5 +1,6 @@
 import './styles/style.css'
-import { Routes, Route } from 'react-router-dom'
+import Route from 'react'
+import Routes from 'router-dom'
 import createWorkout from './components/createWorkout'
 import RoutineDeatils from './components/routineDeatils'
 import RoutineList from './components/routineList'

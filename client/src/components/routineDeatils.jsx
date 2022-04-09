@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { Routes, Route, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import createWorkout from './createWorkout'
@@ -22,7 +22,7 @@ const RoutineDetails = (props) => {
   const [workout, setWorkout] = useState([])
 
   const getRoutineData = async () => {
-    const response = await axios.get(`http://localhost:3001/posts/${id}`)
+    const response = await axios.get(`http://localhost:3001/routiness/${id}`)
     console.log('RESPONSE FROM GET ROUTINE DATA:', response)
     setRoutine(response.data.routine)
     setWorkout(response.data.routineDetails)

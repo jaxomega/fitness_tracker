@@ -5,11 +5,11 @@ const createWorkout = ({ newWorkout, handleInputChange, createWorkout }) => {
         <form onSubmit={createWorkout}>
           <div className="form-field">
             <label><b>Workout</b>:</label>
-            <input name="text" type="textarea" onChange={handleInputChange} placeholder="Description..." value={newWorkout.text} required />
+            <input name="text" type="textarea" onChange={handleInputChange} placeholder="Workout..." value={newWorkout.text} required />
           </div>
           <div className="form-field">
             <label><b>Duration</b>:</label>
-            <input name="text" type="textarea" onChange={handleInputChange} placeholder="Description..." value={newWorkout.text} required />
+            <input name="text" type="textarea" onChange={handleInputChange} placeholder="Duration..." value={newWorkout.text} required />
           </div>
           <div className="form-field">
             <label><b>Description</b>:</label>
