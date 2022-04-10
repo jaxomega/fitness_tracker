@@ -4,11 +4,11 @@ import Routine from '../client/src/models/routine';
 
 const Routine = require('../client/src/models/routine')
 
-router.route('/').get((req, res) => {
-  Workout.find()
-    .then(workouts => res.json(workouts))
-    .catch(err => res.status(400).json(`Error: ${err}`));
-});
+// router.route('/').get((req, res) => {
+//   Workout.find()
+//     .then(workouts => res.json(workouts))
+//     .catch(err => res.status(400).json(`Error: ${err}`));
+// });
 
 // router.route("/delete/:id").delete((req, res) => {
 //   Routine.findAndDelete(req.params)
@@ -100,9 +100,9 @@ function edit_routine(no)
  var duration_data = duration.innerHTML;
  var description_data = description.innerHTML;
 	
- workout.innerHTML = +workout_data;
- duration.innerHTML = +duration_data;
- description.innerHTML = +description_data;
+ workout.innerHTML="<input type='text' id='workout"+no+"' value='"+workout_data+"'>";
+ duration.innerHTML="<input type='number' id='duration"+no+"' value='"+duration_data+"'>";
+ description.innerHTML="<input type='text' id='description"+no+"' value='"+description_data+"'>";
 }
 
 function save_routine(no)
@@ -132,8 +132,8 @@ function add_routine()
 	
  var table = document.getElementById("routineTable");
  var table_len = (table.rows.length)-1;
- var row = table.insertRow(table_len).outerHTML = row+table_len
-
+ var row = table.insertRow(table_len).outerHTML = "<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+new_name+"</td><td id='country_row"+table_len+"'>"+new_country+"</td><td id='age_row"+table_len+"'>"+new_age+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+ 
  document.getElementById("new_workout").value = "";
  document.getElementById("new_duration").value = "";
  document.getElementById("new_description").value = "";
