@@ -78,4 +78,4 @@ exports.Routine_update = function (req, res) {
     })
 }
 
-export default routineDetails
+export default RoutineDetails

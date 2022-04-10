@@ -1,6 +1,9 @@
 import router from '../routes/index'
 import Workout from '../client/src/models/workout'
 import Routine from '../client/src/models/routine';
+import createRoutine from '../client/src/components/createRoutine';
+import RoutineDetails from '../client/src/components/routineDetails';
+import RoutineList from '../client/src/components/routineList';
 
 const Routine = require('../client/src/models/routine')
 
@@ -81,3 +84,4 @@ exports.Routine_delete = function (req, res) {
 };
 
 module.exports = router;
+export default workout_list
