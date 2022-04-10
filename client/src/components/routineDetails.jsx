@@ -1,15 +1,24 @@
 import { useState, useEffect } from 'react'
-import { Routes, Route, useParams } from 'react-router-dom'
+import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import createWorkout from './createRoutine'
 import Table from './table'
 import Routine from '../models/routine'
+import Workout from '../models/workout'
 
+let navigate = useNavigate()
+const routineDetails = (details) => {
+  navigate(`${details.id}`)
+}
 const RoutineDetails = (props) => {
   let { id } = useParams()
-  const [routine, setRoutine] = useState([])
-  const [workout, setWorkout] = useState([])
+  useEffect(() => {
+    let routineDetails = props.details.find(
+      (details) => details.id === parseInt(id)
+    )
+    setDetails(selectedDetails)
+  }, [props.details, id])
 
   const getRoutineData = async () => {
     const response = await axios.get(`http://localhost:3001/routines/${id}`)

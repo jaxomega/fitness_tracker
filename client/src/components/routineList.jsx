@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Routine from '../models/routine'
 import Table from './table'
 
+let navigate = useNavigate()
+const routineList = (list) => {
+  navigate(`${list.id}`)
+}
 const RoutineList = (props) => {
-  
-  useEffect (() => {
-    props.fetchRoutines()
-  },[])
+  let { id } = useParams()
+  useEffect(() => {
+    let routineList = props.list.find(
+      (list) => list.id === parseInt(id)
+    )
+    setRoutine(selectedRoutine)
+  }, [props.routine, id])
+
+const RoutineList = (props) => {
   
   return (
     <div>
@@ -20,5 +29,5 @@ const RoutineList = (props) => {
     </div>
   )
 }
-
+}
 export default RoutineList

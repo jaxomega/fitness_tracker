@@ -1,8 +1,22 @@
 import Table from './table'
+import { useNavigate } from 'react-router-dom';
 import Routine from '../models/routine';
 import React, { Component } from 'react';
 import axios from 'axios';
 
+let navigate = useNavigate()
+const createRoutine = (create) => {
+  navigate(`${create.id}`)
+}
+const CreateRoutine = (props) => {
+  let { id } = useParams()
+  useEffect(() => {
+    let createRoutine = props.create.find(
+      (create) => create.id === parseInt(id)
+    )
+    setRoutine(selectedRoutine)
+  }, [props.routine, id])
+  
 const createRoutine = ({ createRoutine, handleInputChange, newRoutine }) => {
       return (
       <div className="form-container">
@@ -44,6 +58,5 @@ const createRoutine = ({ createRoutine, handleInputChange, newRoutine }) => {
         res.send("Routine Added!")
     })
   };
-
+  }
   export default createRoutine
-  
