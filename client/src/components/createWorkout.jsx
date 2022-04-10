@@ -1,6 +1,12 @@
-
+function newWorkout() {
+  ("#productTable tbody").append("<tr>" + 
+      "<td></td>" +
+      "<td></td>" +
+      "<td></td>" +
+      "</tr>");
+}
 const createWorkout = ({ newWorkout, handleInputChange, createWorkout }) => {
-    return (
+      return (
       <div className="form-container">
         <h2>Workout</h2>
         <form onSubmit={createWorkout}>
