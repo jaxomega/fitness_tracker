@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { Routes, Route, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import createWorkout from './createWorkout'
+import createWorkout from './createRoutine'
 
 const mapStateToProps = ({ routineDetailsState }) => {
   return { routineDetailsState }
