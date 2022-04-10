@@ -30,4 +30,4 @@ const createRoutine = ({ createRoutine, handleInputChange, newRoutine }) => {
     )
   }
   
-  export default createWorkout
+  export default createRoutine

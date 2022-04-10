@@ -1,9 +1,9 @@
 import './styles/style.css'
 import Route from 'react'
 import Routes from 'router-dom'
-import createWorkout from './components/createWorkout'
-import RoutineDeatils from './components/routineDeatils'
+import CreateRoutine from './components/createRoutine'
 import RoutineList from './components/routineList'
+import RoutineDetails from './components/routineDetails'
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <h1>Fitness Tracker</h1>
       <Routes>
         <Route path="" element={<createWorkout />} />
-        <Route path="" element={<RoutineDeatils />} />
+        <Route path="" element={<RoutineDetails />} />
         <Route path="" element={<RoutineList />} />
       </Routes>
     </div>
