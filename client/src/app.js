@@ -6,7 +6,7 @@ import RoutineList from './components/routineList'
 import RoutineDetails from './components/routineDetails'
 import Table from './components/table'
 
-<Route path="create" element={ <CreateRoutine createRoutine={CreateRoutine} handleChange={handleChange} addRoutine={addRoutine} />} />
+<Route path="create" element={ <CreateRoutine createRoutine={CreateRoutine} handleChange={edit_row} addRoutine={CreateRoutine} />} />
 
 const App = () => {
   return (

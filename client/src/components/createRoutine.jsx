@@ -9,7 +9,7 @@ const createRoutine = (create) => {
   navigate(`${create.id}`)
 }
 const handleSubmit = (e) => {
-  props.addRoutine(e)
+  props.createRoutine(e)
   navigate('/create')
 }
 const CreateRoutine = (props) => {

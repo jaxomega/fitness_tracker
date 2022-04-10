@@ -24,4 +24,5 @@ const RoutineDetails = (props) => {
     setRoutine(selectedRoutine)
   }, [props.routine, id])
 }
+
 export default RoutineDetails

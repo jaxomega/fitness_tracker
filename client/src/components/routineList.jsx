@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import Routine from '../models/routine'
 import Table from './table'
 
 let navigate = useNavigate()
+
 const routineList = (list) => {
   navigate(`${list.id}`)
 }
@@ -21,4 +22,5 @@ const RoutineList = (props) => {
     setRoutine(selectedRoutine)
   }, [props.routine, id])
 }
+
 export default RoutineList
