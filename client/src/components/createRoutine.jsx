@@ -16,6 +16,11 @@ const CreateRoutine = (props) => {
     )
     setRoutine(selectedRoutine)
   }, [props.routine, id])
+
+  const handleSubmit = (e) => {
+    props.addRoutine(e)
+    navigate('/create')
+  }
   
 const createRoutine = ({ createRoutine, handleInputChange, newRoutine }) => {
       return (

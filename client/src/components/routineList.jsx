@@ -8,6 +8,10 @@ let navigate = useNavigate()
 const routineList = (list) => {
   navigate(`${list.id}`)
 }
+const handleSubmit = (e) => {
+  props.addRoutine(e)
+  navigate('/list')
+}
 const RoutineList = (props) => {
   let { id } = useParams()
   useEffect(() => {
@@ -16,18 +20,5 @@ const RoutineList = (props) => {
     )
     setRoutine(selectedRoutine)
   }, [props.routine, id])
-
-const RoutineList = (props) => {
-  
-  return (
-    <div>
-      {props.routineState.posts.map((post) => (
-        <ul key={Routine.id}>
-          <Link to={`/routine/${Routine._id}`}>{Routine.title}</Link>
-        </ul>
-      ))}
-    </div>
-  )
-}
 }
 export default RoutineList

@@ -11,6 +11,7 @@ let navigate = useNavigate()
 const routineDetails = (details) => {
   navigate(`${details.id}`)
 }
+
 const RoutineDetails = (props) => {
   let { id } = useParams()
   useEffect(() => {
@@ -19,6 +20,11 @@ const RoutineDetails = (props) => {
     )
     setDetails(selectedDetails)
   }, [props.details, id])
+
+  const handleSubmit = (e) => {
+    props.addRoutine(e)
+    navigate('/details')
+  }
 
   const getRoutineData = async () => {
     const response = await axios.get(`http://localhost:3001/routines/${id}`)
@@ -40,10 +46,6 @@ const RoutineDetails = (props) => {
   console.log('ROUTINE:', routines)
   const workoutsArray = props.routineDetailsState.workouts
   console.log('WORKOUTS:', workoutsArray)
-
-  const handleOnUserChange = (event) => {
-    props.updateWorkoutUser(event.target.value)
-  }
 
   const handleOnTextChange = (event) => {
     props.updateWorkoutText(event.target.value)
