@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import axios from 'axios'
 import createWorkout from './createRoutine'
 import Table from './table'
+import Routine from '../models/routine'
 
 const RoutineDetails = (props) => {
   let { id } = useParams()
@@ -11,7 +12,7 @@ const RoutineDetails = (props) => {
   const [workout, setWorkout] = useState([])
 
   const getRoutineData = async () => {
-    const response = await axios.get(`http://localhost:3001/routiness/${id}`)
+    const response = await axios.get(`http://localhost:3001/routines/${id}`)
     console.log('RESPONSE FROM GET ROUTINE DATA:', response)
     setRoutine(response.data.routine)
     setWorkout(response.data.routineDetails)
@@ -66,14 +67,17 @@ const RoutineDetails = (props) => {
 
 exports.Routine_details = function (req, res) {
   Routine.findById(req.params.id, function (err, Routine) {
-      if (err) return next(err);
+      if (err) 
+      return (err);
       res.send(Routine);
   })
 };
 exports.Routine_update = function (req, res) {
   Routine.findByIdAndUpdate(req.params.id, {$set: req.body},
     function (err, Routine) {
-      if (err) return next(err);
+      if (err) {
+      return (err);
+      }
       res.send("Routine Updated!");
     })
 }

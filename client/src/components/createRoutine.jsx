@@ -37,7 +37,7 @@ const createRoutine = ({ createRoutine, handleInputChange, newRoutine }) => {
     );
     routine.save(function (err) {
         if (err) {
-            return next(err);
+        return (err);
         }
         res.send("Routine Added!")
     })
