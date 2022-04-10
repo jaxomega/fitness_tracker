@@ -24,23 +24,6 @@ const RoutineDetails = (props) => {
   useEffect(() => {
     props.fetchRoutineDetails(id)
   }, [id])
-
-  // const createWorkout = async (event) => {
-  //   event.preventDefault()
-  //   await axios
-  //     .routine('http://localhost:3001/workout', setWorkout)
-  //     .then(function (response) {
-  //       getWorkoutData()
-  //     })
-  //     .catch(function (error) {
-  //       console.log(error)
-  //     })
-  //   setNewWorkout({
-  //     user: '',
-  //     workout: workout.id,
-  //     description: ''
-  //   })
-  // }
   
   console.log('props.routineDetailsState:', props.routineDetailsState)
   const routines = props.routineDetailsState.details
@@ -60,12 +43,6 @@ const RoutineDetails = (props) => {
     <div>
       <h2>Routine Details Page</h2>
       <form>
-        <input
-          type="text"
-          placeholder="Enter user name..."
-          onChange={handleOnUserChange}
-          value={props.routineDetailsState.newWorkout.user}
-        />
         <br />
         <textarea
           placeholder="Enter description..."
@@ -79,7 +56,6 @@ const RoutineDetails = (props) => {
         <h3>Workouts:</h3>
         {workoutsArray.map((workout) => (
           <div key={workout.id}>
-            <p><b>User</b>: {workout.user}</p>
             <p><b>Description</b>: {workout.text}</p>
           </div>
         ))}
@@ -88,4 +64,18 @@ const RoutineDetails = (props) => {
   )
 }
 
-export default RoutineDetails
+exports.Routine_details = function (req, res) {
+  Routine.findById(req.params.id, function (err, Routine) {
+      if (err) return next(err);
+      res.send(Routine);
+  })
+};
+exports.Routine_update = function (req, res) {
+  Routine.findByIdAndUpdate(req.params.id, {$set: req.body},
+    function (err, Routine) {
+      if (err) return next(err);
+      res.send("Routine Updated!");
+    })
+}
+
+export default routineDetails
