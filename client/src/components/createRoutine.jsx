@@ -1,4 +1,5 @@
 import Table from './table'
+import Routine from '../models/routine';
 
 const createRoutine = ({ createRoutine, handleInputChange, newRoutine }) => {
       return (
@@ -25,4 +26,21 @@ const createRoutine = ({ createRoutine, handleInputChange, newRoutine }) => {
     )
   }
   
+  exports.Routine_create = function (req, res) {
+    let routine = new Routine(
+        {
+          workout: Text(req.body.workout),
+          duration: Number(req.body.duration),
+          date: Number(req.body.date),
+          description: Text(req.body.description)
+        }
+    );
+    routine.save(function (err) {
+        if (err) {
+            return next(err);
+        }
+        res.send("Routine Added!")
+    })
+  };
+
   export default createRoutine

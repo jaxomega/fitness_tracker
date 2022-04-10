@@ -5,13 +5,9 @@ import axios from 'axios'
 import createWorkout from './createRoutine'
 import Table from './table'
 
-const mapStateToProps = ({ routineDetailsState }) => {
-  return { routineDetailsState }
-}
-
 const RoutineDetails = (props) => {
   let { id } = useParams()
-  const [routine, setRoutine] = useState({})
+  const [routine, setRoutine] = useState([])
   const [workout, setWorkout] = useState([])
 
   const getRoutineData = async () => {
