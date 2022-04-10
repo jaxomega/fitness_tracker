@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import Routine from '../models/routine'
+import Table from './table'
 
 const RoutineList = (props) => {
   

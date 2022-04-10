@@ -1,10 +1,5 @@
-function newRoutine() {
-  ("#productTable tbody").append("<tr>" + 
-      "<td></td>" +
-      "<td></td>" +
-      "<td></td>" +
-      "</tr>");
-}
+import Table from './table'
+
 const createRoutine = ({ createRoutine, handleInputChange, newRoutine }) => {
       return (
       <div className="form-container">

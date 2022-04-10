@@ -10,7 +10,7 @@ const App = () => {
     <div className="App">
       <h1>Fitness Tracker</h1>
       <Routes>
-        <Route path="" element={<createWorkout />} />
+        <Route path="" element={<CreateRoutine />} />
         <Route path="" element={<RoutineDetails />} />
         <Route path="" element={<RoutineList />} />
       </Routes>

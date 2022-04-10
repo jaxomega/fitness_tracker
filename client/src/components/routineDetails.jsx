@@ -3,6 +3,7 @@ import { Routes, Route, useParams } from 'react-router-dom'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import createWorkout from './createRoutine'
+import Table from './table'
 
 const mapStateToProps = ({ routineDetailsState }) => {
   return { routineDetailsState }
