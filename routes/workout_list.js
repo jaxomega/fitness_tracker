@@ -30,19 +30,32 @@ exports.Routine_create = function (req, res) {
         description: Text(req.body.description)
       }
   );
-  product.save(function (err) {
+  routine.save(function (err) {
       if (err) {
           return next(err);
       }
-      res.send('Product Created successfully')
+      res.send("Routine Added!")
   })
 };
 
-router.route("/delete/:id").delete((req, res) => {
-  Routine.findAndDelete(req.params)
-    .then(() => res.json("Routine Deleted!"))
-    .catch(err => res.status(400).json(`Error: ${err}`));
-});
+exports.Routine_details = function (req, res) {
+  Routine.findById(req.params.id, function (err, Routine) {
+      if (err) return next(err);
+      res.send(Routine);
+  })
+};
+exports.Routine_update = function (req, res) {
+  Routine.findByIdAndUpdate(req.params.id, {$set: req.body},
+    function (err, Routine) {
+      if (err) return next(err);
+      res.send("Routine Updated!");
+    })
+}
+// router.route("/delete/:id").delete((req, res) => {
+//   Routine.findAndDelete(req.params)
+//     .then(() => res.json("Routine Deleted!"))
+//     .catch(err => res.status(400).json(`Error: ${err}`));
+// });
 
 router.route("/update/:id").post((req, res) => {
   Routine.findById(req.params.id)
