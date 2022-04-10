@@ -1,6 +1,8 @@
 import router from '../routes/index'
-import workout from '../models/workout'
+import Workout from '../client/src/models/workout'
 import Routine from '../client/src/models/routine';
+
+const Routine = require('../client/src/models/routine')
 
 router.route('/').get((req, res) => {
   Workout.find()
@@ -8,16 +10,33 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json(`Error: ${err}`));
 });
 
-router.route('/add').Workout((req, res) => {
-  const workout = ([Text]);
-  const duration = Number(req.body.duration);
-  const description = req.body.description;
+// router.route('/add').Workout((req, res) => {
+//   const workout = (req.body.workout);
+//   const duration = Number(req.body.duration);
+//   const description = req.body.description;
 
-  newWorkout
-    .save()
-    .then(() => res.json("Workout Added!"))
-    .catch(err => res.status(400).json(`Error: ${err}`));
-});
+//   newWorkout
+//     .save()
+//     .then(() => res.json("Workout Added!"))
+//     .catch(err => res.status(400).json(`Error: ${err}`));
+// });
+
+exports.Routine_create = function (req, res) {
+  let routine = new Routine(
+      {
+        workout: Text(req.body.workout),
+        duration: Number(req.body.duration),
+        date: Number(req.body.date),
+        description: Text(req.body.description)
+      }
+  );
+  product.save(function (err) {
+      if (err) {
+          return next(err);
+      }
+      res.send('Product Created successfully')
+  })
+};
 
 router.route("/delete/:id").delete((req, res) => {
   Routine.findAndDelete(req.params)
