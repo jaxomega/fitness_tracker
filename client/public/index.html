@@ -25,21 +25,42 @@
                     <th>Description</th>
                   </tr>
                     <tbody>
-                        <tr>workout_1
-                          <td>[workout...]</td>
-                          <td>[duration...]</td>
-                          <td>[description...</td>
+                        <tr id="row1">workout_1
+                          <td id="workout1">[workout...]</td>
+                          <td id="duration1">[duration...]</td>
+                          <td id="description1">[description...</td>
+                          <td>
+                          <input type="button" id="edit1" value="Edit" class="edit" onclick="edit_row('1')">
+                          <input type="button" id="save1" value="Save" class="save" onclick="save_row('1')">
+                          <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
+                          </td>
                         </tr>
-                        <tr>workout_2
-                          <td>[workout...]</td>
-                          <td>[duration...]</td>
-                          <td>[description...</td>
+                        <tr id="row2">workout_2
+                          <td id="workout2">[workout...]</td>
+                          <td id="duration2">[duration...]</td>
+                          <td id="description2">[description...</td>
+                          <td>
+                          <input type="button" id="edit2" value="Edit" class="edit" onclick="edit_row('2')">
+                          <input type="button" id="save2" value="Save" class="save" onclick="save_row('2')">
+                          <input type="button" value="Delete" class="delete" onclick="delete_row('2')">
+                          </td>
                         </tr>
-                        <tr>workout_3
-                          <td>[workout...]</td>
-                          <td>[duration...]</td>
-                          <td>[description...</td>
+                        <tr id="row3">workout_3
+                          <td id="workout3">[workout...]</td>
+                          <td id="duration3">[duration...]</td>
+                          <td id="description3">[description...</td>
+                          <td>
+                          <input type="button" id="edit3" value="Edit" class="edit" onclick="edit_row('3')">
+                          <input type="button" id="save3" value="Save" class="save" onclick="save_row('3')">
+                          <input type="button" value="Delete" class="delete" onclick="delete_row('3')">
+                          </td>
                         </tr>
+                        <tr>
+                          <td><input type="text" id="new_workout"></td>
+                          <td><input type="text" id="new_duration"></td>
+                          <td><input type="text" id="new_description"></td>
+                          <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+                          </tr>
                     </tbody>
                 </thead>
             </table>
