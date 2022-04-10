@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const RoutineSchema = require('./models/routine')
-const WorkoutSchema = require('./models/workout')
+const RoutineSchema = require('./routine')
+const WorkoutSchema = require('./workout')
 
 const Routine = mongoose.model('Routine', RoutineSchema)
 const Workout = mongoose.model('Workout', WorkoutSchema)

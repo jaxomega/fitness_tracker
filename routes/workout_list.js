@@ -1,5 +1,6 @@
 import router from '../routes/index'
 import workout from '../models/workout'
+import Routine from '../client/src/models/routine';
 
 router.route('/').get((req, res) => {
   Workout.find()
@@ -7,10 +8,9 @@ router.route('/').get((req, res) => {
     .catch(err => res.status(400).json(`Error: ${err}`));
 });
 
-router.route('/add').post((req, res) => {
+router.route('/add').Workout((req, res) => {
   const workout = ([Text]);
   const duration = Number(req.body.duration);
-  const date = Date.parse(req.body.date);
   const description = req.body.description;
 
   newWorkout
@@ -19,29 +19,23 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json(`Error: ${err}`));
 });
 
-router.route('/:id').get((req, res) => {
-  Workout.findById(req.params.id)
-    .then(workout => res.json(workout))
-    .catch(err => res.status(400).json(`Error: ${err}`));
-});
-
-router.route("/:id").delete((req, res) => {
-  Workout.findByIdAndDelete(req.params.id)
-    .then(() => res.json("Workout Deleted!"))
+router.route("/delete/:id").delete((req, res) => {
+  Routine.findAndDelete(req.params)
+    .then(() => res.json("Routine Deleted!"))
     .catch(err => res.status(400).json(`Error: ${err}`));
 });
 
 router.route("/update/:id").post((req, res) => {
-  Workout.findById(req.params.id)
-    .then(workout => {
-      workout.username = req.body.username;
-      workout.duration = Number(req.body.duration);
-      workout.date = Date.parse(req.body.date);
-      workout.description = req.body.description;
+  Routine.findById(req.params.id)
+    .then(Routine => {
+      Routine.workout = req.body.workout;
+      Routine.duration = Number(req.body.duration);
+      Routine.date = Date.parse(req.body.date);
+      Routine.description = req.body.description;
       
-      workout
+      Routine
         .save()
-        .then(() => res.json("Workout Updated!"))
+        .then(() => res.json("Routine Updated!"))
         .catch(err => res.status(400).json(`Error: ${err}`));
     })
     .catch(err => res.status(400).json(`Error: ${err}`));
