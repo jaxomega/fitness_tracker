@@ -7,3 +7,4 @@ const Routine = new Schema(
   { timestamps: true }
 )
 module.exports = Routine
+export default Routine

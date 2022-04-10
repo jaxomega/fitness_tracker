@@ -1,3 +1,6 @@
+import Workout from '../client/src/models/workout'
+import Routine from '../client/src/models/routine'
+
 const { Routine, Workout } = require('../models')
 
 const getAllRoutines = async (req, res) => {
@@ -14,7 +17,7 @@ const createWorkout = async (req, res) => {
     const workout = await new Workout(req.body)
     await workout.save()
     const routineId = req.body.routine
-    const routine = await Workout.findById(routined)
+    const routine = await Workout.findById(routine)
     await Routine.findByIdAndUpdate(routineId, {
       Workouts: [...routine.workouts, workout._id]
     })
@@ -42,3 +45,5 @@ module.exports = {
   createWorkout,
   getRoutineDetails
 }
+
+export default index

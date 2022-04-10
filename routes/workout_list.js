@@ -1,5 +1,5 @@
-const router = require('express').Router();
-let Workout = require('../log/workout');
+import router from '../routes/index'
+import workout from '../models/workout'
 
 router.route('/').get((req, res) => {
   Workout.find()
@@ -8,11 +8,10 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-  const username = req.body.username;
+  const workout = ([Text]);
   const duration = Number(req.body.duration);
   const date = Date.parse(req.body.date);
   const description = req.body.description;
-  const newWorkout = new Workout({ username, duration, date, description });
 
   newWorkout
     .save()

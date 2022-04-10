@@ -1,6 +1,6 @@
-const { Router } = require('express')
+import workout from '../models/workout'
+
 const controllers = require('../controllers')
-const router = Router();
 
 router.get('/', (req, res) => res.send('This is root!'))
 
@@ -10,4 +10,4 @@ router.get('/routine/:id', controllers.getWorkoutsByRoutineId)
 
 router.get('/workout', controllers.createWorkout)
 
-module.exports = router;
+export default index
