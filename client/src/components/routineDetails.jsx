@@ -7,8 +7,6 @@ import UpdateRoutine from './updateRoutine'
 import RoutineList from './routineList'
 import deleteRoutine from './deleteRoutine'
 import Table from './table'
-import Routine from '../models/routine'
-import Workout from '../models/workout'
 
 const RoutineDetails = (props) => {
   let { id } = useParams()
@@ -66,8 +64,8 @@ const RoutineDetails = (props) => {
         />
       </form>
       <div>
-        <h3>{Routine.title}</h3>
-        <p><em>{Routine.content}</em></p>
+        <h3>{routineDetails.title}</h3>
+        <p><em>{routineDetails.content}</em></p>
         <h3>Workouts:</h3>
         {workoutsArray.map((workout) => (
           <div key={workout.id}>
@@ -79,22 +77,22 @@ const RoutineDetails = (props) => {
   )
 }
 
-exports.Routine_details = function (req, res) {
-  Routine.findById(req.params.id, function (err, Routine) {
-      if (err) 
-      return (err);
-      res.send(Routine);
-  })
-};
-exports.Routine_update = function (req, res) {
-  Routine.findByIdAndUpdate(req.params.id, {$set: req.body},
-    function (err, Routine) {
-      if (err) {
-      return (err);
-      }
-      res.send("Routine Updated!");
-    })
-}
+// exports.RoutineDetails = function (req, res) {
+//   RoutineDetails.findById(req.params.id, function (err, RoutineDetails) {
+//       if (err) 
+//       return (err);
+//       res.send(RoutineDetails);
+//   })
+// };
+// exports.UpdateRoutine = function (req, res) {
+//   UpdateRoutine.findByIdAndUpdate(req.params.id, {$set: req.body},
+//     function (err, UpdateRoutine) {
+//       if (err) {
+//       return (err);
+//       }
+//       res.send("Routine Updated!");
+//     })
+// }
 
 // let navigate = useNavigate()
 // const routineDetails = (details) => {

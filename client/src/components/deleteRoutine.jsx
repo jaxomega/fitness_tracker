@@ -1,6 +1,5 @@
 import Table from './table'
 import { useNavigate, useParams } from 'react-router-dom';
-import Routine from '../models/routine';
 import RoutineDetails from './routineDetails';
 import RoutineList from './routineList';
 import React, { Component, useEffect } from 'react';
@@ -10,14 +9,25 @@ function resetForm() {
     document.getElementById("workout").value = "";
     document.getElementById("duration").value = "";
     document.getElementById("description").value = "";
-    selectedRow = null;
+    RoutineDetails.id = null;
 }
-function deleteRoutine(tr) {
-    if (confirm('Are you sure to delete this routine?')) {
-        row = tr.parentElement.parentElement;
-        document.getElementById("routineList").deleteRow(row.rowIndex);
-        resetForm();
-    }
+var deleteRoutine = document.querySelectorAll('.delete');
+
+for (var i = 0; i < deleteRoutine.length; i++) {
+  deleteRoutine[i].addEventListener('click', function(event) {
+      event.preventDefault();
+
+      var choice = delete(this.getAttribute('confirm'));
+
+      if (choice) {
+        window.location.delete = this.getAttribute('/delete');
+      }
+  });
+  if (delete('Are you sure to delete this routine?')) {
+    RoutineList = RoutineDetails.parentElement.parentElement;
+    document.getElementById("routineList").deleteRow(RoutineList.id);
+    resetForm();
+}
 }
 
 export default deleteRoutine

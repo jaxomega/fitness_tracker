@@ -1,6 +1,5 @@
 import Table from './table'
 import { useNavigate, useParams } from 'react-router-dom';
-import Routine from '../models/routine';
 import RoutineDetails from './routineDetails';
 import React, { Component, useEffect } from 'react';
 import axios from 'axios';
@@ -18,21 +17,29 @@ import deleteRoutine from './deleteRoutine';
 //     selectedRow.cells[3].innerHTML = formData.description;
 // }
 
-function updateRoutine(req, res) {
-    Routine.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, doc) => {
-        if (!err) { res.redirect('routineList'); }
-        else {
-            if (err.name == 'Error') {
-                Error(err, req.body);
-                res.render("Edit Routine", {
-                    viewRoutine: 'Update Routine',
-                    routine: req.body
-                });
-            }
-            else
-                console.log('Error during record update : ' + err);
-        }
-    });
+function updateRoutine() {
+    document.getElementById("workout").value = "";
+    document.getElementById("duration").value = "";
+    document.getElementById("description").value = "";
+    RoutineDetails.id = null;
 }
+
+
+// function updateRoutine(req, res) {
+//     updateRoutine.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, doc) => {
+//         if (!err) { res.redirect('routineList'); }
+//         else {
+//             if (err.name == 'Error') {
+//                 Error(err, req.body);
+//                 res.render("Edit Routine", {
+//                     viewRoutine: 'Update Routine',
+//                     routine: req.body
+//                 });
+//             }
+//             else
+//                 console.log('Error during record update : ' + err);
+//         }
+//     });
+// }
 
 export default updateRoutine

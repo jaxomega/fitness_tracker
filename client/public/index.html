@@ -1,71 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <script src="style.css" alt="stylesheet"></script>
-  <script src="table.js" alt="table"></script>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fitness Tracker</title>
-</head>
-<body>
-  <div class="container">
-    <div class="row">
-        <div class="collumn">
-            <h2>Routine</h2>
-        </div>
-    </div>
-    <div class="row">
-        <div class="colllumn">
-            <table id="routineTable" class="table">
-                <thead>
-                  <tr>
-                    <th>Workout</th>
-                    <th>Duration</th>
-                    <th>Description</th>
-                  </tr>
-                    <tbody>
-                        <tr id="row">workout_1
-                          <td><input type="text" id="workout"></td>
-                          <td><input type="text" id="duration"></td>
-                          <td><input type="text" id="description"></td>
-                          <td>
-                          <input type="button" id="edit1" value="Edit" class="edit" onclick="{updateRoutine}('1')">
-                          <input type="button" id="save1" value="Save" class="save" onclick="{updateRoutine}('1')">
-                          <input type="button" value="Delete" class="delete" onclick="{deleteRoutine}('1')">
-                          </td>
-                        </tr>
-                        <tr id="row">workout_2
-                          <td><input type="text" id="workout2"></td>
-                          <td><input type="text" id="duration2"></td>
-                          <td><input type="text" id="description2"></td>
-                          <td>
-                          <input type="button" id="edit2" value="Edit" class="edit" onclick="{updateRoutine}('2')">
-                          <input type="button" id="save2" value="Save" class="save" onclick="{updateRoutine}('2')">
-                          <input type="button" value="Delete" class="delete" onclick="{deleteRoutine}('2')">
-                          </td>
-                        </tr>
-                        <tr id="row">workout_3
-                          <td><input type="text" id="workout3"></td>
-                          <td><input type="text" id="duration3"></td>
-                          <td><input type="text" id="description3"></td>
-                          <td>
-                          <input type="button" id="edit3" value="Edit" class="edit" onclick="{updateRoutine}('3')">
-                          <input type="button" id="save3" value="Save" class="save" onclick="{updateRoutine}('3')">
-                          <input type="button" value="Delete" class="delete" onclick="{deleteRoutine}('3')">
-                          </td>
-                        </tr>
-                        <tr>
-                          <td><input type="text" id="new_workout"></td>
-                          <td><input type="text" id="new_duration"></td>
-                          <td><input type="text" id="new_description"></td>
-                          <td><input type="button" class="add" onclick="{createRoutine};" value="Add Row"></td>
-                          </tr>
-                    </tbody>
-                </thead>
-            </table>
-        </div>
-    </div>
-</div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
 </html>

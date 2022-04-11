@@ -1,6 +1,5 @@
 import Table from './table'
 import { useNavigate, useParams } from 'react-router-dom';
-import Routine from '../models/routine';
 import React, { Component, useEffect } from 'react';
 import axios from 'axios';
 import RoutineDetails from './routineDetails';
@@ -51,7 +50,7 @@ const createRoutine = ({ createRoutine, handleInputChange, newRoutine }) => {
   }
   
   exports.Routine_create = function (req, res) {
-    let routine = new Routine(
+    let createRoutine = new createRoutine(
         {
           workout: Text(req.body.workout),
           duration: Number(req.body.duration),
@@ -59,7 +58,7 @@ const createRoutine = ({ createRoutine, handleInputChange, newRoutine }) => {
           description: Text(req.body.description)
         }
     );
-    routine.save(function (err) {
+    createRoutine.save(function (err) {
         if (err) {
         return (err);
         }

@@ -5,7 +5,6 @@ import CreateRoutine from './createRoutine'
 import UpdateRoutine from './updateRoutine'
 import RoutineDetails from './routineDetails'
 import deleteRoutine from './deleteRoutine'
-import Routine from '../models/routine'
 import Table from './table'
 
 const RoutineList = (props) => {
@@ -17,8 +16,8 @@ const RoutineList = (props) => {
   return (
     <div>
       {props.routineState.posts.map((post) => (
-        <ul key={Routine.id}>
-          <Routine to={`/routine/${Routine._id}`}>{Routine.title}</Routine>
+        <ul key={RoutineList.id}>
+          <RoutineList to={`/routine/${RoutineList._id}`}>{RoutineList.title}</RoutineList>
         </ul>
       ))}
     </div>
