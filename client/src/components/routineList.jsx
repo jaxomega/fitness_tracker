@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import CreateRoutine from './createRoutine'
 import UpdateRoutine from './updateRoutine'
 import RoutineDetails from './routineDetails'
+import deleteRoutine from './deleteRoutine'
 import Routine from '../models/routine'
 import Table from './table'
 

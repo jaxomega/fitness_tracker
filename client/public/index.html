@@ -25,33 +25,33 @@
                     <th>Description</th>
                   </tr>
                     <tbody>
-                        <tr id="row1">workout_1
+                        <tr id="row">workout_1
                           <td><input type="text" id="workout"></td>
                           <td><input type="text" id="duration"></td>
                           <td><input type="text" id="description"></td>
                           <td>
-                          <input type="button" id="edit1" value="Edit" class="edit" onclick="edit_row('1')">
+                          <input type="button" id="edit1" value="Edit" class="edit" onclick="{updateRoutine}('1')">
                           <input type="button" id="save1" value="Save" class="save" onclick="save_row('1')">
                           <input type="button" value="Delete" class="delete" onclick="delete_row('1')">
                           </td>
                         </tr>
-                        <tr id="row2">workout_2
+                        <tr id="row">workout_2
                           <td><input type="text" id="workout2"></td>
                           <td><input type="text" id="duration2"></td>
                           <td><input type="text" id="description2"></td>
                           <td>
-                          <input type="button" id="edit2" value="Edit" class="edit" onclick="edit_row('2')">
+                          <input type="button" id="edit2" value="Edit" class="edit" onclick="{updateRoutine}('2')">
                           <input type="button" id="save2" value="Save" class="save" onclick="save_row('2')">
                           <input type="button" value="Delete" class="delete" onclick="delete_row('2')">
                           </td>
                         </tr>
-                        <tr id="row3">workout_3
+                        <tr id="row">workout_3
                           <td><input type="text" id="workout3"></td>
                           <td><input type="text" id="duration3"></td>
                           <td><input type="text" id="description3"></td>
                           <td>
-                          <input type="button" id="edit3" value="Edit" class="edit" onclick="edit_row('3')">
-                          <input type="button" id="save3" value="Save" class="save" onclick="save_row('3')">
+                          <input type="button" id="edit3" value="Edit" class="edit" onclick="{updateRoutine}('3')">
+                          <input type="button" id="save3" value="Save" class="save" onclick="{updateRoutine}('3')">
                           <input type="button" value="Delete" class="delete" onclick="delete_row('3')">
                           </td>
                         </tr>
@@ -59,7 +59,7 @@
                           <td><input type="text" id="new_workout"></td>
                           <td><input type="text" id="new_duration"></td>
                           <td><input type="text" id="new_description"></td>
-                          <td><input type="button" class="add" onclick="add_row();" value="Add Row"></td>
+                          <td><input type="button" class="add" onclick="{createRoutine};" value="Add Row"></td>
                           </tr>
                     </tbody>
                 </thead>

@@ -1,8 +1,10 @@
 import Table from './table'
 import { useNavigate, useParams } from 'react-router-dom';
 import Routine from '../models/routine';
+import RoutineDetails from './routineDetails';
 import React, { Component, useEffect } from 'react';
 import axios from 'axios';
+import deleteRoutine from './deleteRoutine';
 
 // function onEdit(td) {
 //     selectedRow = td.parentElement.parentElement;
