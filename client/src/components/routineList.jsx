@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import CreateRoutine from './createRoutine'
+import UpdateRoutine from './updateRoutine'
+import RoutineDetails from './routineDetails'
 import Routine from '../models/routine'
 import Table from './table'
 
@@ -14,7 +17,7 @@ const RoutineList = (props) => {
     <div>
       {props.routineState.posts.map((post) => (
         <ul key={Routine.id}>
-          <Link to={`/routine/${Routine._id}`}>{Routine.title}</Link>
+          <Routine to={`/routine/${Routine._id}`}>{Routine.title}</Routine>
         </ul>
       ))}
     </div>

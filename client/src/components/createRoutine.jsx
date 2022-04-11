@@ -3,6 +3,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import Routine from '../models/routine';
 import React, { Component, useEffect } from 'react';
 import axios from 'axios';
+import RoutineDetails from './routineDetails';
+import RoutineList from './routineList';
 
 const CreateRoutine = (props) => {
   let { id } = useParams()
@@ -10,7 +12,7 @@ const CreateRoutine = (props) => {
     let createRoutine = props.create.find(
       (create) => create.id === parseInt(id)
     )
-    setRoutine(selectedRoutine)
+    RoutineDetails(RoutineDetails.id)
   }, [props.routine, id])
   
   let navigate = useNavigate()

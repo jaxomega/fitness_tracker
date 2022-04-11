@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import { Routes, Route, useParams, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import axios from 'axios'
-import CreateWorkout from './createRoutine'
+import CreateRoutine from './createRoutine'
 import UpdateRoutine from './updateRoutine'
+import RoutineList from './routineList'
 import Table from './table'
 import Routine from '../models/routine'
 import Workout from '../models/workout'
@@ -14,7 +15,7 @@ const RoutineDetails = (props) => {
     let routineDetails = props.details.find(
       (details) => details.id === parseInt(id)
     )
-    setDetails(selectedDetails)
+    routineDetails(routineDetails.id)
   }, [props.details, id])
 
   let navigate = useNavigate()
@@ -30,8 +31,8 @@ const RoutineDetails = (props) => {
   const getRoutineData = async () => {
     const response = await axios.get(`http://localhost:3001/routines/${id}`)
     console.log('RESPONSE FROM GET ROUTINE DATA:', response)
-    setRoutines(response.data.routine)
-    setWorkout(response.data.routineDetails)
+    RoutineList(response.data.routine)
+    RoutineDetails(response.data.routineDetails)
   }
 
   useEffect(() => {

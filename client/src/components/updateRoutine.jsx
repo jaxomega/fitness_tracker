@@ -20,8 +20,8 @@ function updateRoutine(req, res) {
     Routine.findOneAndUpdate({ _id: req.body._id }, req.body, { new: true }, (err, doc) => {
         if (!err) { res.redirect('routineList'); }
         else {
-            if (err.name == 'ValidationError') {
-                handleValidationError(err, req.body);
+            if (err.name == 'Error') {
+                Error(err, req.body);
                 res.render("Edit Routine", {
                     viewRoutine: 'Update Routine',
                     routine: req.body
